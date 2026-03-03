@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mock-up Page</title>
+
+  <!-- Inter font from Google - set as $font-family-base in style.scss -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Icons - used for FAQ icons, footer socials, app store buttons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+  <!-- Compiled from css/style.scss - Bootstrap is imported there, not here -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =====================
+       NAVBAR
+       Bootstrap navbar-expand-lg with collapse for mobile
+       bg-primary uses my $primary variable from style.scss
+       ===================== -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">
+        <img src="Photos&Text/odoo-white.svg" alt="Odoo" height="30">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link text-white" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#features">Products</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#awards">Pages</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#faq">App</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#footer">Docs</a></li>
+        </ul>
+        <div class="d-flex gap-2">
+          <a href="#" class="btn text-white btn-sm">Sign In</a>
+          <a href="#" class="btn btn-light btn-sm">Buy now</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =====================
+       HERO SECTION
+       Full viewport height, bg-primary background
+       Diagonal cut at bottom via clip-path in style.scss
+       Right column: credit card UI mockup built in pure HTML/CSS
+       ===================== -->
+  <section id="hero" class="bg-primary text-white py-5">
+    <div class="container">
+      <div class="row align-items-center min-vh-100">
+
+        <!-- Left: headline + CTA + trusted logos -->
+        <div class="col-lg-5">
+          <h1 class="display-4 fw-bold mb-3">Development<br>done right</h1>
+          <p class="mb-4">Build a beautiful, modern website with flexible components built from scratch.</p>
+          <a href="#" class="btn btn-light btn-lg mb-5">Get started +</a>
+          <div class="d-flex align-items-center gap-3 flex-wrap mt-3">
+            <span class="text-white">Trusted by:</span>
+            <img src="Photos&Text/google-white.svg" alt="Google" height="25">
+            <img src="Photos&Text/spotify-white.svg" alt="Spotify" height="25">
+            <!-- Airbnb and PayPal logos are dark so I invert them to white -->
+            <img src="Photos&Text/airbnb.svg" alt="Airbnb" height="25" style="filter: brightness(0) invert(1);">
+            <img src="Photos&Text/paypal.svg" alt="PayPal" height="25" style="filter: brightness(0) invert(1);">
+          </div>
+        </div>
+
+        <!-- Right: credit card management UI mockup -->
+        <div class="col-lg-7 mt-5 mt-lg-0 d-flex justify-content-center">
+          <div class="bg-white text-dark rounded-4 shadow p-4" style="width: 380px;">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="fw-semibold">Manage cards</span>
+              <button class="btn btn-outline-secondary btn-sm">Add new</button>
+            </div>
+
+            <!-- Card display - dark gradient background, Mastercard logo built with two overlapping circles -->
+            <div class="rounded-3 p-4 mb-3 text-white" style="background: linear-gradient(135deg, #1a1a2e, #2d2d5e); min-height: 160px;">
+              <div class="d-flex justify-content-between align-items-start">
+                <!-- Mastercard overlapping circles -->
+                <div style="position:relative; width:50px; height:30px;">
+                  <div style="width:28px;height:28px;background:#eb001b;border-radius:50%;position:absolute;left:0;opacity:0.9;"></div>
+                  <div style="width:28px;height:28px;background:#f79e1b;border-radius:50%;position:absolute;left:15px;opacity:0.9;"></div>
+                </div>
+                <span class="badge bg-success">Active</span>
+              </div>
+              <div class="mt-3">
+                <small class="text-white-50">CARD NUMBER</small>
+                <p class="fw-bold fs-5 mb-1">4358 - 7421 - 9256 - 6682</p>
+              </div>
+              <div class="d-flex gap-4">
+                <div>
+                  <small class="text-white-50">NAME</small>
+                  <p class="fw-bold mb-0">John Snow</p>
+                </div>
+                <div>
+                  <small class="text-white-50">EXPIRY DATE</small>
+                  <p class="fw-bold mb-0">11/23</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Transaction list -->
+            <div class="border-bottom py-2 d-flex justify-content-between">
+              <div>
+                <p class="mb-0 fw-semibold">Starbucks</p>
+                <small class="text-muted">Pending - San Francisco, United States</small>
+              </div>
+              <span class="fw-semibold">$5,50 USD</span>
+            </div>
+            <div class="py-2 d-flex justify-content-between">
+              <div>
+                <p class="mb-0 fw-semibold">Nike Sports</p>
+                <small class="text-muted">Pending - Lisbon, Portugal</small>
+              </div>
+              <span class="fw-semibold">$129,00 USD</span>
+            </div>
+            <a href="#" class="text-primary text-decoration-none">View all ›</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================
+       FEATURES SECTION
+       4 feature blocks alternating layout (cards left/right)
+       Text content is injected by renderFeatureText() in script.js
+       ===================== -->
+  <section id="features" class="py-5">
+
+    <!-- Feature 1: overlapping cards left, text right -->
+    <div class="container py-5 px-5">
+      <div class="row align-items-center">
+
+        <!-- Left: two overlapping cards (photo on top, project list below) -->
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div style="position: relative; height: 380px;">
+
+            <!-- Back card: project progress list - populated by JS -->
+            <div class="bg-white rounded-3 shadow px-5 pt-4" style="position: absolute; bottom: 0; left: 0; width: 380px; z-index: 1;">
+              <p class="fw-semibold mb-3">Awesome projects</p>
+              <div id="project-list"></div>
+            </div>
+
+            <!-- Front card: photo with play button -->
+            <div class="rounded-3 shadow overflow-hidden" style="position: absolute; top: 0; right: 0; width: 320px; z-index: 2;">
+              <img src="Photos&Text/img_01.jpg" alt="Team working" class="img-fluid w-100" style="height: 260px; object-fit: cover;">
+              <button class="btn btn-light btn-sm position-absolute top-0 end-0 m-2">Play video ▶</button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right: text injected by renderFeatureText(1) in script.js -->
+        <div class="col-lg-6" id="feature1-text" style="padding-left: 100px;"></div>
+
+      </div>
+    </div>
+
+    <!-- Feature 2: text left, photo right -->
+    <div class="container py-5 px-5">
+      <div class="row align-items-center">
+
+        <!-- Left: text injected by renderFeatureText(2) -->
+        <div class="col-lg-6 pe-5" id="feature2-text"></div>
+
+        <!-- Right: photo with play button -->
+        <div class="col-lg-6 ps-5 mt-4 mt-lg-0">
+          <div style="position: relative;">
+            <img src="Photos&Text/img_02.jpg" alt="Feature 2" class="img-fluid rounded-3 shadow w-100" style="height: 320px; object-fit: cover;">
+            <button class="btn btn-light btn-sm position-absolute top-0 end-0 m-2">Play video ▶</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Feature 3: four separate cards left, text right -->
+    <div class="container py-5 px-5">
+      <div class="row align-items-center justify-content-center">
+
+        <!-- Left: two columns of cards -->
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="d-flex gap-3">
+
+            <!-- Column 1: avatar card + stats card -->
+            <div class="d-flex flex-column gap-3">
+
+              <!-- Person card with name and heart icon -->
+              <div class="bg-white rounded-3 shadow p-3" style="width: 200px;">
+                <img src="Photos&Text/person_03.jpg" alt="Person" class="img-fluid rounded-3 mb-3 w-100" style="height: 180px; object-fit: cover; object-position: top;">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="d-flex align-items-center gap-2">
+                    <!-- Initials avatar circle using bg-warning -->
+                    <div class="rounded-circle bg-warning d-flex align-items-center justify-content-center text-white fw-bold" style="width:32px;height:32px;font-size:11px;">JH</div>
+                    <span class="small fw-semibold">Jimmy Hendrix</span>
+                  </div>
+                  <i class="bi bi-heart text-muted"></i>
+                </div>
+              </div>
+
+              <!-- Stats card: 300+ components -->
+              <div class="bg-white rounded-3 shadow p-3 d-flex align-items-center gap-2" style="width: 200px;">
+                <!-- bg-teal is my custom class defined in style.scss -->
+                <div class="rounded-circle bg-teal d-flex align-items-center justify-content-center text-white" style="width:32px;height:32px;">✔</div>
+                <div>
+                  <p class="mb-0 fw-semibold small">300+ components</p>
+                  <p class="mb-0 text-muted" style="font-size:11px;">Built to be customized.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Column 2: Airbnb rating card + Website UI Kit card -->
+            <div class="d-flex flex-column gap-3">
+
+              <!-- Airbnb rating card -->
+              <div class="bg-white rounded-3 shadow p-4 text-center" style="width: 180px;">
+                <img src="Photos&Text/airbnb.svg" alt="Airbnb" height="25" class="mb-2">
+                <div style="color: #f0a500;">★★★★☆</div>
+                <p class="fw-bold mb-0 small">4.95 out of 5 stars</p>
+                <p class="text-muted mb-0" style="font-size:11px;">from 23 reviews</p>
+              </div>
+
+              <!-- Website UI Kit card with overlapping avatars -->
+              <div class="bg-white rounded-3 shadow p-3 text-center" style="width: 180px;">
+                <img src="Photos&Text/company_01.png" alt="UI Kit" class="mx-auto d-block mb-2 rounded-circle" style="width:45px;height:45px;object-fit:cover;">
+                <p class="fw-semibold small mb-3">Website UI Kit</p>
+
+                <!-- Overlapping avatar circles - negative margin-left creates the stack effect -->
+                <div class="d-flex justify-content-center mb-2" style="margin-left: 30px;">
+                  <img src="Photos&Text/person_01.jpg" class="rounded-circle border border-white" style="width:30px;height:30px;object-fit:cover;margin-left:-15px;">
+                  <img src="Photos&Text/person_02.jpg" class="rounded-circle border border-white" style="width:30px;height:30px;object-fit:cover;margin-left:-15px;">
+                  <img src="Photos&Text/person_03.jpg" class="rounded-circle border border-white" style="width:30px;height:30px;object-fit:cover;margin-left:-15px;">
+                </div>
+
+                <hr style="border-color: #e0e0e0; opacity: 0.5;">
+
+                <!-- Action icons using Bootstrap Icons -->
+                <div class="d-flex justify-content-center gap-3 text-muted">
+                  <i class="bi bi-paperclip"></i>
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right: text injected by renderFeatureText(3) -->
+        <div class="col-lg-6 ps-5" id="feature3-text"></div>
+
+      </div>
+    </div>
+
+    <!-- Feature 4: text left, photo right -->
+    <div class="container py-5 px-5">
+      <div class="row align-items-center">
+
+        <!-- Left: text + app store buttons injected by renderFeatureText(4) -->
+        <div class="col-lg-6 pe-5" id="feature4-text"></div>
+
+        <!-- Right: photo with play button -->
+        <div class="col-lg-6 ps-5 mt-4 mt-lg-0">
+          <div style="position: relative;">
+            <img src="Photos&Text/img_03.jpg" alt="Feature 4" class="img-fluid rounded-3 shadow w-100" style="height: 320px; object-fit: cover;">
+            <button class="btn btn-light btn-sm position-absolute top-0 end-0 m-2">Play video ▶</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- =====================
+       DARK CTA BANNER
+       Navy background with asymmetric border-radius (0 2rem 0 2rem)
+       matching the mockup's unique corner style
+       ===================== -->
+  <div class="container py-5">
+    <div class="text-white d-flex justify-content-between align-items-center p-5" style="background-color: #1a1a3e; border-radius: 0 2rem 0 2rem;">
+      <div>
+        <h4 class="fw-bold mb-4">Infinite solutions</h4>
+        <p class="mb-0 text-white-50">Intuitive markup, powerful and lightning fast build tools,<br>everything you need to turn your ideas into incredible products.</p>
+      </div>
+      <!-- flex-shrink-0 stops the button from wrapping on smaller screens -->
+      <a href="#" class="btn btn-light flex-shrink-0">Learn more →</a>
+    </div>
+  </div>
+
+  <!-- =====================
+       AWARDS SECTION
+       Light background ($light variable)
+       Cards are staggered using position: relative; top: 40px on alternates
+       Scrollable horizontally on mobile via overflow-x: auto on the section
+       ===================== -->
+  <section id="awards" class="py-5" style="background-color: #f5f8ff; overflow-x: auto;">
+    <!-- Extra inner padding so the staggered cards don't get clipped by clip-path -->
+    <div style="padding-bottom: 100px;">
+      <div class="container py-3 px-5">
+
+        <span class="badge bg-primary text-white mb-3">Awards</span>
+        <p class="mb-5">Awards for design, creativity and innovation on the Internet</p>
+
+        <!-- Cards row - min-width: max-content prevents wrapping on small screens -->
+        <div class="d-flex gap-4 justify-content-center" style="padding-bottom: 50px; min-width: max-content;">
+
+          <!-- Lower cards sit 40px lower via position: relative; top: 40px -->
+
+          <!-- Airbnb - lower -->
+          <div class="award-card bg-white rounded-3 shadow-sm p-4 py-5 text-center flex-shrink-0" style="position: relative; top: 40px; width: 200px;">
+            <img src="Photos&Text/airbnb.svg" alt="Airbnb" height="40" class="mb-3">
+            <div style="color: #f0a500;" class="mb-2">★★★★☆</div>
+            <p class="fw-bold mb-0">4.95 out of 5 stars</p>
+            <small class="text-muted">from 23 reviews</small>
+          </div>
+
+          <!-- Amazon - higher -->
+          <div class="award-card bg-white rounded-3 shadow-sm p-4 py-5 text-center flex-shrink-0" style="width: 200px;">
+            <img src="Photos&Text/amazon.svg" alt="Amazon" height="40" class="mb-3">
+            <p class="text-muted small mb-3">They build modern looking websites easily using Tabs.</p>
+            <a href="#" class="text-dark border-bottom border-dark text-decoration-none fw-semibold">Learn more</a>
+          </div>
+
+          <!-- Slack - lower -->
+          <div class="award-card bg-white rounded-3 shadow-sm p-4 py-5 text-center flex-shrink-0" style="position: relative; top: 40px; width: 200px;">
+            <img src="Photos&Text/slack.svg" alt="Slack" height="40" class="mb-3">
+            <p class="text-muted small mb-3">They build modern looking websites easily using Trello.</p>
+            <a href="#" class="text-dark border-bottom border-dark text-decoration-none fw-semibold">Learn more</a>
+          </div>
+
+          <!-- Spotify - higher -->
+          <div class="award-card bg-white rounded-3 shadow-sm p-4 py-5 text-center flex-shrink-0" style="width: 200px;">
+            <img src="Photos&Text/spotify.svg" alt="Spotify" height="40" class="mb-3">
+            <div style="color: #f0a500;" class="mb-2">★★★★☆</div>
+            <p class="fw-bold mb-0">4.95 out of 5 stars</p>
+            <small class="text-muted">from 23 reviews</small>
+          </div>
+
+          <!-- PayPal - lower -->
+          <div class="award-card bg-white rounded-3 shadow-sm p-4 py-5 text-center flex-shrink-0" style="position: relative; top: 40px; width: 200px;">
+            <img src="Photos&Text/paypal.svg" alt="PayPal" height="40" class="mb-3">
+            <p class="text-muted small mb-3">They build modern looking websites easily using Docker.</p>
+            <a href="#" class="text-dark border-bottom border-dark text-decoration-none fw-semibold">Learn more</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================
+       FAQ / HELPFUL ANSWERS
+       Bootstrap accordion in two columns
+       All content (questions, header, CTA) is injected by script.js
+       Plus icon rotates to X on open via CSS in style.scss
+       ===================== -->
+  <section id="faq" class="py-5">
+    <div class="container py-3 px-5">
+
+      <!-- Header injected by script.js faqMeta object -->
+      <div id="faq-header"></div>
+
+      <!-- Two column accordion - content injected by renderFaqColumn() -->
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="accordion" id="faqLeft"></div>
+        </div>
+        <div class="col-md-6">
+          <div class="accordion" id="faqRight"></div>
+        </div>
+      </div>
+
+      <!-- CTA injected by script.js faqMeta object -->
+      <div id="faq-cta"></div>
+
+    </div>
+  </section>
+
+  <!-- =====================
+       FOOTER
+       Dark navy background matching $dark variable
+       Diagonal clip at top via clip-path in style.scss
+       Dividers use gradient fade effect instead of solid borders
+       ===================== -->
+  <footer id="footer" style="background-color: #1a1a3e;">
+    <div class="container py-5 px-5">
+
+      <!-- Top CTA bar with fading gradient divider at bottom -->
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 pb-4"
+           style="background-image: linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent); background-size: 100% 1px; background-repeat: no-repeat; background-position: bottom;">
+        <div>
+          <h4 class="text-white fw-bold mb-1">Brilliant solutions for your ideas</h4>
+          <p class="text-white mb-0">Modern looking websites.</p>
+        </div>
+        <div class="d-flex gap-3">
+          <a href="#" class="btn btn-light d-flex align-items-center gap-2">
+            <i class="bi bi-file-text"></i> Documentation
+          </a>
+          <a href="#" class="btn btn-primary text-white">Purchase now</a>
+        </div>
+      </div>
+
+      <!-- Footer links in 4 columns -->
+      <div class="row py-5">
+
+        <!-- Brand column: logo, description, social icons -->
+        <div class="col-lg-4 mb-4 mb-lg-0 pe-5">
+          <img src="Photos&Text/odoo-white.svg" alt="Odoo" height="30" class="mb-3">
+          <p class="text-white-50 small">Odoo attempts to bring the best development experience to designers and developers by offering the tools needed for having a quick and solid start in most web projects.</p>
+          <div class="d-flex gap-3 text-white-50">
+            <i class="bi bi-dribbble fs-5"></i>
+            <i class="bi bi-github fs-5"></i>
+            <i class="bi bi-instagram fs-5"></i>
+            <i class="bi bi-facebook fs-5"></i>
+          </div>
+        </div>
+
+        <!-- Account links -->
+        <div class="col-lg-2 col-6 mb-4 mb-lg-0">
+          <h6 class="text-white fw-bold mb-3">Account</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Profile</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Settings</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Billing</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Notifications</a></li>
+          </ul>
+        </div>
+
+        <!-- About links -->
+        <div class="col-lg-2 col-6 mb-4 mb-lg-0">
+          <h6 class="text-white fw-bold mb-3">About</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Services</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Pricing</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Contact</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Careers</a></li>
+          </ul>
+        </div>
+
+        <!-- Company links -->
+        <div class="col-lg-2 col-6">
+          <h6 class="text-white fw-bold mb-3">Company</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Community</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Help center</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Support</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar with fading gradient divider at top -->
+      <div class="d-flex justify-content-between align-items-center pt-4 flex-wrap gap-2"
+           style="background-image: linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent); background-size: 100% 1px; background-repeat: no-repeat; background-position: top;">
+        <p class="text-white-50 mb-0 small">© <span class="text-white fw-bold">Odoo.</span> All rights reserved</p>
+        <div class="d-flex gap-3">
+          <a href="#" class="text-white-50 text-decoration-none small">Terms</a>
+          <a href="#" class="text-white-50 text-decoration-none small">Privacy</a>
+          <a href="#" class="text-white-50 text-decoration-none small">Cookies</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS bundle (includes Popper) - needed for navbar collapse and accordion -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

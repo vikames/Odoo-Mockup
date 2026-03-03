@@ -1,0 +1,166 @@
+// =====================
+// THEME VARIABLES
+// I'm overriding Bootstrap's defaults here so everything
+// stays consistent - change colours/fonts here, not in the HTML
+// =====================
+
+// Colours
+$primary:             #038aff;
+$warning:             #f0a500;
+$dark:                #1a1a3e;
+$light:               #f5f8ff;
+$teal:                #4ecba5;
+
+// Typography
+$font-family-base:    'Inter', sans-serif;
+$headings-font-weight: 700;
+
+// Spacing & shape
+$border-radius:       0.5rem;
+$btn-border-radius:   0.5rem;
+$card-border-radius:  1rem;
+
+// Buttons
+$btn-font-weight:     600;
+$btn-padding-x:       1.5rem;
+
+// Navbar
+$navbar-padding-y:    1rem;
+
+// Shadows - used across cards and components
+$box-shadow:          0 4px 20px rgba(0, 0, 0, 0.08);
+$box-shadow-lg:       0 10px 40px rgba(0, 0, 0, 0.12);
+
+// =====================
+// ACCORDION VARIABLES
+// Has to go before the Bootstrap import to take effect
+// =====================
+$accordion-button-active-bg:        transparent;
+$accordion-button-active-color:     $primary;
+$accordion-button-focus-box-shadow: none;
+$accordion-border-radius:           $border-radius;
+
+// =====================
+// CUSTOM COLOUR MAP
+// Adding brand colours into Bootstrap's theme so I can use
+// bg-brand-dark, text-brand-light etc. as utility classes
+// =====================
+$custom-colors: (
+  "brand-dark":  $dark,
+  "brand-light": $light,
+  "teal":        $teal,
+);
+
+// =====================
+// BOOTSTRAP IMPORT
+// Everything above this line overrides Bootstrap defaults
+// =====================
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// =====================
+// MERGE CUSTOM COLOURS
+// Has to come after import so $theme-colors already exists
+// =====================
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// =====================
+// TEAL UTILITY CLASSES
+// Bootstrap doesn't generate these automatically from $custom-colors
+// so I'm adding them manually here
+// =====================
+.bg-teal   { background-color: $teal; }
+.text-teal { color: $teal; }
+
+// =====================
+// NAVBAR
+// Adding a faint white line under the nav links to
+// visually separate the navbar from the hero below
+// =====================
+.navbar .container {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 10px;
+}
+
+// =====================
+// HERO SECTION
+// Diagonal clip at the bottom - makes the hero flow
+// smoothly into the features section
+// =====================
+#hero {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  padding-bottom: 150px;
+}
+
+// =====================
+// AWARDS CARDS
+// Lift effect on hover to make them feel clickable
+// Using $box-shadow-lg variable for the hover shadow
+// =====================
+.award-card {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $box-shadow-lg !important;
+  }
+}
+
+// =====================
+// AWARDS SECTION
+// Diagonal clip at the bottom to transition into FAQ
+// =====================
+#awards {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+// =====================
+// FAQ SECTION
+// Negative margin pulls it up behind the awards diagonal
+// =====================
+#faq {
+  margin-top: -50px;
+}
+
+// =====================
+// FAQ ACCORDION
+// Custom shadows and padding - Bootstrap's defaults are too plain
+// Using $border-radius and $box-shadow variables for consistency
+// =====================
+#faq .accordion-item {
+  margin-bottom: 1rem;
+  box-shadow: $box-shadow !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-radius: $border-radius !important;
+  overflow: hidden;
+}
+
+#faq .accordion-button {
+  padding: 1.2rem 1.5rem;
+}
+
+// Hiding the default Bootstrap chevron - I'm using a custom plus icon instead
+#faq .accordion-button::after {
+  display: none;
+}
+
+// Rotating the plus to an X when the accordion is open
+#faq .faq-icon {
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+#faq .accordion-button:not(.collapsed) .faq-icon {
+  transform: rotate(45deg);
+}
+
+// =====================
+// FOOTER
+// Diagonal clip at the top to continue the diagonal theme
+// Negative margin pulls it up into the FAQ section
+// =====================
+footer {
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+  padding-top: 80px;
+  margin-top: -30px;
+}
