@@ -5,6 +5,8 @@ What I would improve in my code:
 4. Further abstract the JavaScript — right now adding a new feature section requires
   editing both the HTML and the JS data object, ideally the whole section would be 
   generated from the data object alone like the FAQ already is.
+5. Make sure the website looks good in dark mode.
+6. Make some tweaks so diagonal lines look better spaced.
 
 What's good about the mockup design:
 1. Clean, modern design with a consistent colour palette
