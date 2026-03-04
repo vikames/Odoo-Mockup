@@ -1,5 +1,5 @@
 What I would improve in my code:
-1.Overlapping card layouts use hardcoded pixel widths that break on small screens.
+1. Overlapping card layouts use hardcoded pixel widths that break on small screens.
 2. Inline styles in HTML could be moved into SCSS for cleaner HTML
 3. Add proper ARIA labels for accessibility
 4. Further abstract the JavaScript — right now adding a new feature section requires
