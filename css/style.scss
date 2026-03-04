@@ -160,7 +160,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 // Negative margin pulls it up into the FAQ section
 // =====================
 footer {
-  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
   padding-top: 80px;
   margin-top: -30px;
 }
